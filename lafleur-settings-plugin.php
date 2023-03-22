@@ -2,8 +2,8 @@
 /**
  * Plugin Name: LaFleur Settings Plugin
  * Description: Inserts Google Tag Manager script into website head
- * Version: 1.0
- * Author: Your Name
+ * Version: 1.02
+ * Author: LaFleur Marketing
  */
 
 function lf_settings_header() {
@@ -36,10 +36,14 @@ function lf_settings_noscript() {
 }
 
 function lf_settings_footer() {
-    ?>
-    <script>
-        var lfmui=function(){var b=!1,a=function(){if(b)return!1;dataLayer.push({"minimal-user-interaction":!0});dataLayer.push({event:"minimal-user-interaction"});return fired=!0};document.addEventListener("mousemove",a,{once:!0});document.addEventListener("scroll",a,{once:!0});document.addEventListener("focus",a,{once:!0});document.addEventListener("touchstart",a,{once:!0})}();
-    <?php
+    $lf_settings_add_mui = get_option('lf_settings_add_mui');
+    if (!empty($lf_settings_add_mui)) {
+        ?>
+        <script>
+            var lfmui=function(){var b=!1,a=function(){if(b)return!1;dataLayer.push({"minimal-user-interaction":!0});dataLayer.push({event:"minimal-user-interaction"});return fired=!0};document.addEventListener("mousemove",a,{once:!0});document.addEventListener("scroll",a,{once:!0});document.addEventListener("focus",a,{once:!0});document.addEventListener("touchstart",a,{once:!0})}();
+        </script>
+        <?php
+    }
 }
 
 
@@ -53,7 +57,7 @@ function lf_settings_plugin_init() {
 add_action('plugins_loaded', 'lf_settings_plugin_init');
 
 function lf_settings_plugin_menu() {
-    add_options_page('Google Tag Manager Settings', 'Google Tag Manager', 'manage_options', 'lf-settings-plugin-settings', 'lf_settings_plugin_options_page');
+    add_options_page('LaFleur Plugin Settings', 'LaFleur Plugin', 'manage_options', 'lf-settings-plugin-settings', 'lf_settings_plugin_options_page');
 }
 
 function lf_settings_plugin_settings() {
@@ -68,7 +72,7 @@ function lf_settings_plugin_add_mui_setting_callback() {
     $lf_settings_add_mui = get_option('lf_settings_add_mui');
     echo '<input type="checkbox" id="lf_settings_add_mui" name="lf_settings_add_mui" value="1" ' . checked(1, $lf_settings_add_mui, false) . ' />';
     if ($lf_settings_add_mui) {
-        echo '<p>To support the Minimal User Interaction event, please add a Custom Event trigger to Google Tag Manager that listens for the event name <pre>minimal-user-interaction</pre> </p>'
+        echo '<p>To support the Minimal User Interaction event, please add a Custom Event trigger to Google Tag Manager that listens for the event name <pre>minimal-user-interaction</pre> </p>';
     }
 }
 
