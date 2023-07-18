@@ -100,5 +100,3 @@ function lf_settings_plugin_options_page() {
 
 
 ?>
-
-
