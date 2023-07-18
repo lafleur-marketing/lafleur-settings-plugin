@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: LaFleur Settings Plugin
- * Description: Inserts Google Tag Manager script into website head
+ * Description: Configure common settings for LaFleur Hosting
  * Version: 1.1
  * Author: LaFleur Marketing
  */
@@ -10,7 +10,7 @@ require 'includes/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://gitlab.com/lafleur2/lafleur-wordpress-plugin-updater/-/raw/main/settings.json',
+	'https://gitlab.com/lafleur2/lafleur-settings-plugin',
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'lafleur-settings-plugin'
 );
