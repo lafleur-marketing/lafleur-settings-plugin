@@ -2,9 +2,19 @@
 /**
  * Plugin Name: LaFleur Settings Plugin
  * Description: Inserts Google Tag Manager script into website head
- * Version: 1.02
+ * Version: 1.1
  * Author: LaFleur Marketing
  */
+
+require 'includes/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://gitlab.com/lafleur2/lafleur-wordpress-plugin-updater/-/raw/main/settings.json',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'lafleur-settings-plugin'
+);
+
 
 function lf_settings_header() {
     $lf_settings_id = get_option('lf_settings_id');
