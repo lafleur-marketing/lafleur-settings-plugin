@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LaFleur Settings Plugin
  * Description: Configure common settings for LaFleur Hosting
- * Version: 1.1.4
+ * Version: 1.1.5
  * Author: LaFleur Marketing
  */
 
@@ -96,17 +96,26 @@ function lf_settings_plugin_id_setting_callback() {
 }
 
 function lf_settings_plugin_options_page() {
-    ?>
-    <div class="wrap">
-        <h2>Google Tag Manager Settings</h2>
-        <form method="post" action="options.php">
-            <?php settings_fields('lf-settings-plugin-settings-group'); ?>
-            <?php do_settings_sections('lf-settings-plugin-settings'); ?>
-            <?php submit_button(); ?>
-        </form>
-    </div>
-    <?php
+    // Get the current user's data
+    $current_user = wp_get_current_user();
+    
+    // Check if the user's email contains '@lafleur.marketing' and the user has 'administrator' capabilities
+    if (strpos($current_user->user_email, '@lafleur.marketing') !== false && current_user_can('administrator')) {
+        ?>
+        <div class="wrap">
+            <h2>Google Tag Manager Settings</h2>
+            <form method="post" action="options.php">
+                <?php settings_fields('lf-settings-plugin-settings-group'); ?>
+                <?php do_settings_sections('lf-settings-plugin-settings'); ?>
+                <?php submit_button(); ?>
+            </form>
+        </div>
+        <?php
+    } else {
+        echo "The settings contained in this plugin are optimized for hosting offered by LaFleur Marketing, and should only be changed by employees of LaFleur One Inc. If you have questions about the settings or performance of your site, please contact your LaFleur Account Manager.";
+    }
 }
+
 
 
 ?>
