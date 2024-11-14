@@ -20,6 +20,38 @@ LaFleur Settings Plugin is a WordPress plugin that provides additional functiona
 5. Click **Install Now** and wait for the installation to complete.
 6. Once activated, navigate to the plugin's settings page: **WordPress admin panel > Settings > LaFleur Plugin**.
 
+## Contributing:
+The settings plugin uses an update scheme where a new branch will automatically update Wordpress sites.
+Because of that, the `master` branch is not necessarily the most up-to-date version: please ensure that
+you are checking out the most updated branch when you update the code.
+
+TODO: create a git hook to sync the master branch with the most recent branch
+
+This assumes you know how to work with Git.
+
+The repo for this project is https://gitlab.com/lafleur2/lafleur-settings-plugin/
+
+When you are ready to deploy, create a new branch for your version number, i.e.:
+
+```
+git branch -b 1.1.5
+git add -A
+git commit -m "create 1.1.5 branch for deploy"
+git push -u origin 1.1.5
+```
+
+Once you've got it deployed, you need to make a release.
+
+Log into Gitlab and  https://gitlab.com/lafleur2/lafleur-settings-plugin/-/releases/ and create a new release.
+
+Create a new tag that begins with the letter v and includes your version number (i.e.: v1.1.5), and make sure 
+to select your branch from the "source" list. Give it a release title, date, and release notes
+
+When you're done, click "Create Release"
+
+Over the next 12 hours, Wordpress sites that use a version of this plugin that is v1.1.2 or higher and have 
+automatic updates on, the plugin will roll out. It will immediately be available for manual updates.
+
 ## Usage:
 
 - **Plugin Permissions**: To modify the settings in this plugin, the user's email domain must contain `@lafleur.marketing`
