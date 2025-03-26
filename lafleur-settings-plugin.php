@@ -10,10 +10,13 @@ require 'includes/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://gitlab.com/lafleur2/lafleur-settings-plugin',
+	'https://github.com/lafleur-marketing/lafleur-settings-plugin',
 	__FILE__, //Full path to the main plugin file or functions.php.
 	'lafleur-settings-plugin'
 );
+
+$myUpdateChecker->setBranch('main');
+$myUpdateChecker->setAuthentication('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');
 
 
 function lf_settings_header() {

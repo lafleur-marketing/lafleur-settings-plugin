@@ -1,5 +1,13 @@
-# LaFleur Settings Plugin
+=== LaFleur Settings Plugin ==
+Contributors: cwhitelf
+Requires at least: 4.7
+Tested up to: 5.4
+Stable tag: 4.3
+Requires PHP: 7.0
 
+LaFleur Managed Hosting settings
+
+== Description ==
 LaFleur Settings Plugin is a WordPress plugin that provides additional functionality for your website, allowing easy management of various LaFleur Hosting site management and configuration tools without the need for manual coding. The plugin focuses on integrating Google Tag Manager functionality within your WordPress website, streamlining your configuration and data collection processes.
 
 ## Features:
@@ -79,19 +87,24 @@ For support, feature requests, or bug reports, open an [issue](https://gitlab.co
 ## Author:
 LaFleur Marketing
 
-## Changelog
-
-**Version 1.1.5**
-- Add "superuser" status determined by user email domain & WP admin rights
-- Update readme.md
-
-**Version 1.1.4**
-- Various improvements and bug fixes.
-
-
 ## License:
 This plugin is proprietary software, and unauthorized distribution is prohibited.
 
 **Note**: Always backup your website before installing or updating any plugin. Check for compatibility with your WordPress version and other plugins.
 
 Thank you for choosing the LaFleur Settings Plugin. We hope it optimizes your website's performance and user experience.
+
+== Changelog ==
+
+= 1.7 =
+* Convert to github
+* Update readme.txt (from readme.md)
+
+= Version 1.1.5 =
+* Add "superuser" status determined by user email domain & WP admin rights
+* Update readme.md
+
+= Version 1.1.4 = 
+* Various improvements and bug fixes.
+
+
