@@ -2,7 +2,7 @@
 /**
  * Plugin Name: LaFleur Settings Plugin
  * Description: Configure common settings for LaFleur Hosting
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: LaFleur Marketing
  */
 
